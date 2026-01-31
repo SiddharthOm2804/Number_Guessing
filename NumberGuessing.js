@@ -24,6 +24,11 @@ const Guessing = ()=>{
         document.getElementById("subtitle").innerText =`Number is between ${start} to ${end}`;
     }
     document.getElementById("attempts").innerText = Attempt;
+    if(Attempt==10){
+        document.getElementById("message").style.color = "Red";
+        document.getElementById("message").innerText = "You Lose 😓";
+        Guess.removeEventListener('click',Guessing);
+    }
 }
 Guess.addEventListener('click',Guessing);
 const reset = document.getElementById("reset");
